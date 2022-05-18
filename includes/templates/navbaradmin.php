@@ -1,9 +1,4 @@
 
-<?php session_start();
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,12 +39,14 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Add product</a>
+                    <a class="nav-link" href="">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">View product</a>
+                    <a class="nav-link" href="">Products</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="">Users</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,48 +57,7 @@
     </nav>
     <!-- ********************end nav bar*********************************** -->
 
-<!-- **********************************footer*** -->
-<footer class="footer-48201" style=" margin-top: 100px; background-color: #010038 ;" >
-        <div class="container" >
-            <div class="row" >
-                <div class="col-sm-4 pr-sm-5"style=" margin-top: 40px;">
-                    <a href="#" class="footer-site-logo d-block mb-4" style="color: white;">Booky</a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi perferendis ratione
-                        perspiciatis accusantium.</p>
-                </div>
-                <div class="col-sm"style=" margin-top: 40px;">
-                    <ul class="list-unstyled nav-links">
-                        <li><a href="#"style="color: white;" >Home</a></li>
-                        <li><a href="#"style="color: white;">Add product</a></li>
-                        <li><a href="#"style="color: white;">View product</a></li>
 
-                </div>
-
-                <div class="col-sm"style=" margin-top: 40px;">
-                    <ul class="list-unstyled nav-links">
-                        <li><a href="#"style="color: white;">Privacy Policy</a></li>
-                        <li><a href="#"style="color: white;">Terms &amp; Conditions</a></li>
-                        <li><a href="#"style="color: white;">Partners</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm text-sm-center" style=" margin-top: 40px; ">
-                    <ul class="social list-unstyled" style="display: flex; justify-content: space-between; ">
-                        <li><a href="#"style="color: white;"><i class="fa fa-facebook-official" style="font-size:24px"></i></a></li>
-                        <li><a href="#"style="color: white;"><i class="fa fa-twitter-square" style="font-size:24px"></i></a></li>
-                        <li><a href="#"style="color: white;"><i class="material-icons" style="font-size:24px">email</i></i></a></li>
-                    </ul>
-                    <p class=""><a href="#" class="btn btn-tertiary"style=" color:white">Contact Us</a></p>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-12 text-center">
-                    <div class="copyright mt-5 pt-5">
-                        <p><small>© 2022 All Rights Reserved.</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>
