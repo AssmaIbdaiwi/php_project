@@ -19,12 +19,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="layout\style.css">
 </head>
 <body>
 
 
 <!-- **********************************footer*** -->
-<footer class="footer-48201" style=" margin-top: 100px; background-color: #010038 ;" >
+<footer class="footer-48201" style="margin-top:600px; background-color: #010038 ; " >
         <div class="container" >
             <div class="row" >
                 <div class="col-sm-4 pr-sm-5"style=" margin-top: 40px;">
