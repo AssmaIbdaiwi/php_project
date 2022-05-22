@@ -3,7 +3,7 @@ session_start();
 require_once '../admin_cp/init.php';
 $productId = $_GET['id'];
 
-$select = "SELECT product_id,product_name, product_price, product_description, product_main_image, product_desc_image_1, product_desc_image_2, product_desc_image_3, on_sale, product_category_id, product_tag, product_price * sale_factor / 100 as sale_price FROM `products`";
+$select = "SELECT product_id,product_name, product_price, product_description, product_main_image, product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products`";
 
 $statement = $db->prepare($select . 'WHERE product_id = :id');
 $statement->bindValue(':id', $productId);
@@ -55,15 +55,11 @@ include($tmp . 'navbar.php');
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $product['product_name']?></h1>
                         <div class="fs-5 mb-5">
-							<?php if($product['on_sale']){?>
-                            <span class="text-decoration-line-through">JOD <?php echo round($product['product_price'],2)?></span>
-                            <span>JOD <?php echo round($product['sale_price'],2)?></span>
+
 							<?php
-									}
-								else {
-									echo '<span>' . 'JOD ' . round($product['product_price'],2) . '</span>';
-								}
-							?>
+
+									echo '<span>' . 'JOD ' . round($product['product_price'],2) . '</span>';?>
+
                         </div>
                         <p class="lead"><?php echo $product['product_description']?></p>
                         <div class="d-flex">
@@ -130,22 +126,18 @@ include($tmp . 'navbar.php');
 						<div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<?php echo $relatedProduct['product_main_image'] ?>" alt="..." />
+                            <img class="card-img-top" src="../admin_cp/<?php echo $relatedProduct['product_main_image'] ?>" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder"><?php echo $relatedProduct['product_name'] ?></h5>
                                     <!-- Product price-->
-                                    <?php if($relatedProduct['on_sale']){?>
-										<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-										<span class="text-decoration-line-through">JOD <?php echo round($relatedProduct['product_price'],2)?></span>
-										<span>JOD <?php echo round($relatedProduct['sale_price'],2)?></span>
+
 									<?php
-									}
-								else {
+
 									echo '<span>' . 'JOD ' . round($relatedProduct['product_price'],2) . '</span>';
-								}
+						
 							?>
                                 </div>
                             </div>

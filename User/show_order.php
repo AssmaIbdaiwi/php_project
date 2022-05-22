@@ -1,7 +1,7 @@
 <?php
-session_start();
 require('../admin_cp/init.php');
 include_once('../includes/templates/navbar.php');
+session_start();
 
 ?>
 
@@ -15,8 +15,8 @@ include_once('../includes/templates/navbar.php');
 <div class="container user_container" style="margin-bottom: 5%;">
     <div class="row align-items-stretch no-gutters contact-wrap">
         <div class="col-md-3 sidebar_div">
-            <img src="<?php echo $_SESSION['user_image']?>" class="rounded-circle" alt="Profile" width="100" height="100">
-            <h6 style="color: white;"><i class="fas fa-user-alt user_icons" style="color: #293A80;"></i><?php echo isset($_SESSION['username']) ? $_SESSION['username']: 'unknown'?></h6>            <br><br>
+            <img src="images/pic.jpg" class="rounded-circle" alt="Profile" width="100" height="100">
+            <h6 style="color: white;"><i class="fas fa-user-alt user_icons" style="color: #293A80;"></i><?php echo $_SESSION['user_name']?></h6>            <br><br>
             <a href="info.php" class="user_acc_links"><i class="fas fa-user-alt user_icons"></i> Info</a><br><br>
             <a href="orders.php" class="user_acc_links"><i class="fas fa-shopping-basket user_icons"></i> Orders</a><br><br>
             <a href="delete_session.php" class="user_acc_links"><i class="fa fa-sign-out user_icons"></i> Logout</a>
@@ -25,9 +25,11 @@ include_once('../includes/templates/navbar.php');
             <?php
             try {
                 $id = $_GET['order-id'];
+                $date = $_GET['order_date'];
 
-                $query1 = "SELECT * FROM cart WHERE order_id = :id";
+                $query1 = "SELECT * FROM cart WHERE order_date = :O_Date and order_id = :id";
                 $result = $db->prepare($query1);
+                $result->bindParam(':O_Date', $date);
                 $result->bindParam(':id', $id);
                 $result->execute();
                 $data = $result->fetchAll();

@@ -12,7 +12,7 @@ require_once('init.php');
 $id=$_POST['id']??null;
 
 if(!$id){
-    header('Location: products.php');
+    headear('Location: products.php');
 
 exit;}
 

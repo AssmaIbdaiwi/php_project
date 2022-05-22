@@ -49,12 +49,12 @@
 						if(!isset($_SESSION['id'])){
                         echo "<div class=col-md-2 pr-1 d-flex topper align-items-center text-lg-right>
 						      <a href=loginpage.php class=white ;><botton>Login|</botton></a>
-					          <a href=reg.php class=gold ><botton>|Register</botton></a></div>";}
+					          <a href='../homepage/reg.php' class=gold ><botton>|Register</botton></a></div>";}
 					    else {
 	                    echo "<div class=col-md-2 pr-1 d-flex topper align-items-center text-lg-right>
 						    <h6 class=welcome> Welcome $_SESSION[username]</div>
 				   <div class=col-md-1 pr-5 d-flex topper align-items-center text-lg-right>
-					   <a class=gold href=account.php>Account</a>
+					   <a class=gold href='../User/info.php' >Account</a>
 				   </div>
 				   <div class=col-md-1 pr-5 d-flex topper align-items-center text-lg-right>
 					   <a class=gold href=logout.php>Logout</a>

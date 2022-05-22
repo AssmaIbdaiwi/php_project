@@ -15,7 +15,7 @@ require_once('init.php');
 $id=$_GET['id']??null;
 
 if(!$id){
-    header('Location: categories.php');
+    headear('Location: categories.php');
 
 exit;}
 

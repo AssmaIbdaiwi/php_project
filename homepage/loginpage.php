@@ -5,7 +5,7 @@ session_start();
 error_reporting(0);
 
  if (isset($_SESSION['id'])) {
-      header("Location: homepage.php");
+      header("Location: index.php");
   }
 
 if (isset($_POST['submit'])) {
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
                 <input name="password" type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Password" required/>
               </div>
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-              <a href="homepage.php"><button name="submit" class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color: #537EC5;">Login</button></a>
+              <a href="index.php"><button name="submit" class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color: #537EC5;">Login</button></a>
             </div>
 </form>
             <div>

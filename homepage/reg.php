@@ -20,10 +20,10 @@ if (isset($_POST['submit'])) {
   $specialchars = preg_match('@[^\w]@', $password);
 }
 	if ($password == $cpassword) {
-		$sql = "SELECT * FROM users WHERE email='$email'";
+		$sql = "SELECT * FROM users WHERE user_email='$email'";
 		$result = mysqli_query($conn, $sql);
 		if (!$result->num_rows > 0) {
-			$sql = "INSERT INTO users (username, email, password)
+			$sql = "INSERT INTO users (user_name, user_email, user_password)
 					VALUES ('$username', '$email', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
                     </label>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="homepage.php"><button name="submit" type="submit" class="btn btn-lg"  style="background-color: #537EC5; color: white;" >Register</button></a>
+                    <a href="loginpage.php"><button name="submit" type="submit" class="btn btn-lg"  style="background-color: #537EC5; color: white;" >Register</button></a>
                   </div>
                 </form>
               </div>

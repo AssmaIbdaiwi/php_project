@@ -1,3 +1,4 @@
+
 <?php 
 require_once('init.php');
 ?>
@@ -8,7 +9,7 @@ require_once('init.php');
 $id=$_POST['id']??null;
 
 if(!$id){
-    header('Location: user.php');
+    headear('Location: user.php');
 
 exit;}
 
