@@ -1,4 +1,9 @@
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
+
+<?php
+require_once('init.php');
+?>
+
+
 <?php
 
 
@@ -9,7 +14,7 @@ if(!$id){
 
 exit;}
 
-$statement=$pdo->prepare('DELETE FROM categories WHERE category_id=:id');
+$statement=$db->prepare('DELETE FROM categories WHERE category_id=:id');
 $statement->bindValue(':id',$id);
 $statement->execute();
 

@@ -1,8 +1,10 @@
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
 
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
+
 <?php
 
 #read id from link number
@@ -14,7 +16,7 @@ if(!$id){
 exit;}
 
 
-$statement=$pdo->prepare('SELECT * FROM products WHERE product_id=:id');
+$statement=$db->prepare('SELECT * FROM products WHERE product_id=:id');
 $statement->bindValue(':id',$id);
 $statement->execute();
 $products=$statement->fetch(PDO::FETCH_ASSOC);
@@ -84,7 +86,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("UPDATE products SET product_name=:name , product_main_image=:image, product_description=:description, product_price=:price, product_categorie_id=:dropdown WHERE product_id=:id");
+$statement=$db->prepare("UPDATE products SET product_name=:name , product_main_image=:image, product_description=:description, product_price=:price, product_category_id=:dropdown WHERE product_id=:id");
  $statement->bindValue(':name',$name);
  $statement->bindValue(':image',$imagePath);
  $statement->bindValue(':description',$description);
@@ -140,7 +142,7 @@ echo '<img src="'.$products['product_main_image'].'"class="update">';}
 
 
 
-$statement =$pdo->prepare('SELECT * FROM categories  ORDER BY category_id  ASC');
+$statement =$db->prepare('SELECT * FROM categories  ORDER BY category_id  ASC');
 
 
 $statement->execute();
@@ -189,6 +191,6 @@ $products= $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+  <?php include '../includes/templates/footeradmin.php';?>
 
 

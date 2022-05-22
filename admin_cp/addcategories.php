@@ -1,7 +1,10 @@
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
+
+
 <?php
 
 
@@ -49,7 +52,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("INSERT INTO categories (category_name,category_image)
+$statement=$db->prepare("INSERT INTO categories (category_name,category_image)
 VALUES (:name,:image)
 ");
  $statement->bindValue(':name',$name);
@@ -120,6 +123,6 @@ if (empty(!$errors)){
 
 
 ?>
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+<?php include '../includes/templates/footeradmin.php';?>
 
 

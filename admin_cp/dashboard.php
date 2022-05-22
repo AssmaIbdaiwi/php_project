@@ -1,4 +1,4 @@
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
+<?php include '../includes/templates/navbaradmin.php';?>
 <?php   include '../layout/table.php';?>
 
         <!-- Masthead-->
@@ -9,7 +9,7 @@
             </div>
 </div>
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+<?php include '../includes/templates/footeradmin.php';?>
 
 
 

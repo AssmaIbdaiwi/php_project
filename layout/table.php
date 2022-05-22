@@ -37,7 +37,6 @@
       <li><a href="../admin_cp/categories.php"><i class="fa fa-pie-chart"></i><p>Categories</p></a></li>
       <li><a href="../admin_cp/products.php"><i class="fa fa-cart-arrow-down"></i></i><p>Products</p></a></li>
       <li><a href="../admin_cp/user.php"><i class="fa fa-user"></i><p>User</p></a></li>
-      <li><a href="../admin_cp/admin_profile.php"><i class="fa fa-cogs"></i><p>Admin profile</p></a></li>
    <div class="active"></div>
     </ul>
   

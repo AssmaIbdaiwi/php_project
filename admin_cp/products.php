@@ -1,7 +1,8 @@
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
+<?php include '../includes/templates/navbaradmin.php';
+      require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
 
 
@@ -11,10 +12,10 @@
 
 $search=$_GET['search']??'';
 if ($search){
-  $statement =$pdo->prepare('SELECT * FROM products WHERE name LIKE :name ORDER BY product_id ASC');
+  $statement =$db->prepare('SELECT * FROM products WHERE product_name LIKE :name ORDER BY product_id ASC');
   $statement->bindValue(':name',"%$search%");
 }else{
-  $statement =$pdo->prepare('SELECT * FROM products ORDER BY product_id ASC');
+  $statement =$db->prepare('SELECT * FROM products ORDER BY product_id ASC');
 }
 
 
@@ -82,6 +83,6 @@ foreach($products as $i){
 ?>
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+<?php include '../includes/templates/footeradmin.php';?>
 
 

@@ -1,8 +1,10 @@
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
 
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
+
 <?php
 
 
@@ -52,7 +54,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("INSERT INTO users (user_name,user_image,user_email,user_mobile)
+$statement=$db->prepare("INSERT INTO users (user_name,user_image,user_email,user_mobile)
 VALUES (:name,:image,:orders,:info)
 ");
  $statement->bindValue(':name',$name);
@@ -132,6 +134,6 @@ echo '<form  method="post" enctype="multipart/form-data">
 
 
 ?>
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+<?php include '../includes/templates/footeradmin.php';?>
 
 

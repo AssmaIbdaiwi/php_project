@@ -1,7 +1,10 @@
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
+
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
+
 
 
 
@@ -12,12 +15,12 @@
 $id=$_GET['id']??null;
 
 if(!$id){
-    headear('Location: categories.php');
+    header('Location: categories.php');
 
 exit;}
 
 
-$statement=$pdo->prepare('SELECT * FROM categories WHERE category_id=:id');
+$statement=$db->prepare('SELECT * FROM categories WHERE category_id=:id');
 $statement->bindValue(':id',$id);
 $statement->execute();
 $products=$statement->fetch(PDO::FETCH_ASSOC);
@@ -79,7 +82,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("UPDATE categories SET category_name=:name , category_image=:image WHERE category_id=:id");
+$statement=$db->prepare("UPDATE categories SET category_name=:name , category_image=:image WHERE category_id=:id");
  $statement->bindValue(':name',$name);
  $statement->bindValue(':image',$imagePath);
  $statement->bindValue(':id',$id);
@@ -161,6 +164,6 @@ echo '<img src="'.$products['category_image'].'"class="update">';}
   
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+  <?php include '../includes/templates/footeradmin.php';?>
 
 

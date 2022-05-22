@@ -1,7 +1,9 @@
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php'; ?>
 
-<?php include '../layout/table.php'; ?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php'; ?>
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
+<?php   include '../layout/table.php';?>
+
 
 
 
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         #for not add empty value;
-        $statement = $pdo->prepare("INSERT INTO admins (admin_name,admin_image,admin_email,admin_password)
+        $statement = $db->prepare("INSERT INTO admins (admin_name,admin_image,admin_email,admin_password)
 VALUES (:name,:image,:email,:password)
 ");
         $statement->bindValue(':name', $name);
@@ -152,4 +154,4 @@ function randomString($n)
 
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php' ?>
+<?php include '../includes/templates/footeradmin.php';?>

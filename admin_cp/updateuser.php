@@ -1,8 +1,9 @@
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
 
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
-
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
+
 
 
 <?php
@@ -16,7 +17,7 @@ if(!$id){
 exit;}
 
 
-$statement=$pdo->prepare('SELECT * FROM users WHERE user_id=:id');
+$statement=$db->prepare('SELECT * FROM users WHERE user_id=:id');
 $statement->bindValue(':id',$id);
 $statement->execute();
 $products=$statement->fetch(PDO::FETCH_ASSOC);
@@ -82,7 +83,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("UPDATE users SET user_name=:name , user_image=:image, user_email=:orders, user_mobile=:info WHERE user_id=:id");
+$statement=$db->prepare("UPDATE users SET user_name=:name , user_image=:image, user_email=:orders, user_mobile=:info WHERE user_id=:id");
  $statement->bindValue(':name',$name);
  $statement->bindValue(':image',$imagePath);
  $statement->bindValue(':orders',$orders);

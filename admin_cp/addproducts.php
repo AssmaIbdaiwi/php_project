@@ -1,6 +1,9 @@
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\navbaradmin.php';?>
+
+<?php include '../includes/templates/navbaradmin.php';
+require_once('init.php');
+?>
 <?php   include '../layout/table.php';?>
-<?php include 'C:\xampp\htdocs\php_project\admin_cp\connect.php';?>
+
 
 
 <?php
@@ -57,7 +60,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$pdo->prepare("INSERT INTO products (product_name, product_main_image, product_description, product_price,	product_categorie_id)
+$statement=$db->prepare("INSERT INTO products (product_name, product_main_image, product_description, product_price,	product_category_id)
 VALUES (:name,:image,:description,:price,:dropdown)
 ");
 
@@ -94,7 +97,7 @@ function randomString($n){
 
 
 
-$statement =$pdo->prepare('SELECT * FROM categories  ORDER BY category_id  ASC');
+$statement =$db->prepare('SELECT * FROM categories  ORDER BY category_id  ASC');
 
 
 $statement->execute();
@@ -147,6 +150,6 @@ if (empty(!$errors)){
 
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+<?php include '../includes/templates/footeradmin.php';?>
 
 
