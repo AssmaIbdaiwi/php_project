@@ -1,6 +1,11 @@
+
 <?php
-session_start();
+include_once('../homepage/header.php');
+
+
 require_once '../admin_cp/init.php';
+
+
 $productId = $_GET['id'];
 
 $select = "SELECT product_id,product_name, product_price, product_description, product_main_image, product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products`";
@@ -45,7 +50,7 @@ $subCatStatment->execute();
 $subCategories = $subCatStatment->fetchAll(PDO::FETCH_ASSOC);
 $filt = uniqueCategory($categories);
 
-include($tmp . 'navbar.php');
+// include($tmp . 'navbar.php');
 ?>
         <!-- Product section-->
         <section class="py-5">

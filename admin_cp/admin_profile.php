@@ -15,6 +15,7 @@ require_once('init.php');
 
 #for sure use post
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // $name = $_POST['image'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -98,18 +99,18 @@ function randomString($n)
                                     <h4 class="text-right">Profile Settings</h4>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-md-6"><label class="labels">Name</label>
+                                    <div class="col-md-12"><label class="labels">Name</label>
                                         <input type="text" name="name" class="form-control" placeholder="first name">
                                     </div>
-                                    <div class="col-md-6"><label class="labels">Lastname</label>
-                                        <input type="text" class="form-control" placeholder="lastname">
-                                    </div>
+                                    <!-- <div class="col-md-6"><label class="labels">Lastname</label>
+                                        <input type="text"  class="form-control" placeholder="lastname">
+                                    </div> -->
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="enter phone number"></div>
-                                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter address"></div>
+                                    <!-- <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" placeholder="enter phone number"></div>
+                                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter address"></div> -->
                                     <div class="form-group">
-                                        <div class="col-md-12"><label class="labels">Add Image</label> <input type="file"></div>
+                                        <div class="col-md-12"><label class="labels">Add Image</label> <input type="file" name="image"></div>
                                     </div>
                                 </div>
 

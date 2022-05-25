@@ -12,7 +12,7 @@ require_once('init.php');
 $id=$_GET['id']??null;
 
 if(!$id){
-    headear('Location: user.php');
+    header('Location: user.php');
 
 exit;}
 

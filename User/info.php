@@ -1,9 +1,8 @@
 <?php
-session_start();
-include('../admin_cp/init.php');
-include_once('../includes/templates/navbar.php');
 
+// include_once('../includes/templates/navbar.php');
 
+include_once('../new/header.php');
 // $_SESSION['user_name']='ruba';
 
 ?>
@@ -89,6 +88,6 @@ include_once('../includes/templates/navbar.php');
     </div>
 </div>
 <?php
-include_once('../includes/templates/footer.php');
+include_once('../new/footer.php');
 
 ?>

@@ -1,6 +1,7 @@
 <?php
-include('../admin_cp/init.php');
-include_once('../includes/templates/navbar.php');
+
+include_once('../new/header.php');
+// include_once('nav.php');
 
 ?>
 
@@ -38,21 +39,35 @@ include_once('../includes/templates/navbar.php');
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <input type="submit" value="Send Message" name="submit-btn" class="btn rounded-3 py-2 px-4">
+                        <div class="col-md-12 form-group"  >
+                            <input type="submit" value="Send Message" name="submit-btn" class="btn rounded-3 py-2 px-4" style=" background-color: #e15a53">
                         </div>
                     </div>
                 </form>
                 <?php
                 if (isset($_POST['submit-btn'])) {
+                    $fname=$_POST['fname'];
+                    $lname=$_POST['lname'];
+                    $mail=$_POST['email'];
+                    $msg=$_POST['message'];
+
+                    $sql=('INSERT INTO messages (first_name, last_name, email, message) VALUES (:fname, :lname, :mail, :msg)');
+                    $statment=$db->prepare($sql);
+                    $statment->bindValue(':fname', $fname);
+                    $statment->bindValue(':lname', $lname);
+                    $statment->bindValue(':mail', $mail);
+                    $statment->bindValue(':msg', $msg);
+
+                    $statment->execute();
+
                     echo ('<h6 style="color: #9fec51;">Message sent successfully</h6>');
                 }
                 ?>
             </div>
         </div>
-        <div class="col-md-4" id="contact_info">
-            <div class="contact-info h-100">
-                <h3>Contact Information</h3>
+        <div class="col-md-4" id="contact_info"  style=" background-color: #e15a53">
+            <div class="contact-info h-100" >
+                <h1>Contact Information</h1>
                 <p class="mb-5">If you have any questions or queries, our staff will always be happy to help. Feel free to contact us by telephone or email and we will be sure to get back to you as soon as possible.</p>
                 <img src="../User/images/contact us.png" class="responsive" alt="contact" id="contact_img">
                 <ul class="list-unstyled">
@@ -72,6 +87,24 @@ include_once('../includes/templates/navbar.php');
 </div>
 
 <?php
-include_once('../includes/templates/footer.php');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+include_once('../new/footer.php');
+// include_once('footer.php');
 
 ?>

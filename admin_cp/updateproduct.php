@@ -11,7 +11,7 @@ require_once('init.php');
 $id=$_GET['id']??null;
 
 if(!$id){
-    headear('Location: products.php');
+    header('Location: products.php');
 
 exit;}
 

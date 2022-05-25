@@ -1,7 +1,7 @@
 <?php include "header.php" ?>
 <?php include "Nav.php" ?>
 
-<section id="home-section" class="hero">
+<!-- <section id="home-section" class="hero">
 		  <div class="home-slider js-fullheight owl-carousel">
 	      <div class="slider-item js-fullheight">
 	      	<div class="overlay"></div>
@@ -242,9 +242,9 @@
     		<div class="row">
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/Laps.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/Laps.jpg" alt="Colorlib Template"> -->
     						<!-- <span class="status">30%</span> -->
-    						<div class="overlay"></div>
+    						<!-- <div class="overlay"></div>
     					</a>
     					<div class="text py-3 px-3">
     						<h3><a href="#">Laptops</a></h3>
@@ -262,9 +262,9 @@
 	    							</p>
 	    						</div>
 	    					</div>
-    						<p class="bottom-area d-flex px-3">
+    						<p class="bottom-area d-flex px-3"> -->
     							<!-- <a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a> -->
-    							<a href="#" class="buy-now text-center py-2">Shop<span><i class="ion-ios-cart ml-1"></i></span></a>
+    							<!-- <a href="#" class="buy-now text-center py-2">Shop<span><i class="ion-ios-cart ml-1"></i></span></a>
     						</p>
     					</div>
     				</div>
@@ -353,9 +353,9 @@
     			</div>
     		</div>
     	</div>
-    </section>
+    </section> -->
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/BG.jpg);">
+    <!-- <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/BG.jpg);">
     	<div class="container">
     		<div class="row justify-content-center py-5">
     			<div class="col-md-10">
@@ -418,5 +418,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+	
     <?php include "footer.php" ?>

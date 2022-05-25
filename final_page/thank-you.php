@@ -1,7 +1,8 @@
 
 
 <?php include('../admin_cp/init.php'); ?> 
-<?php include('../includes/templates/navbar.php'); ?>    
+<?php include_once('../homepage/header.php'); ?>    
+
 
  <div class="row">
     <div class="col-md-12">

@@ -40,14 +40,16 @@ echo '<div class="searchbox">
 
 
 #table
-echo' <div class="tablecatbox"><div class="tablecat"> <table class="table table-striped">
+echo' <div class="tablecatbox"><div class="tablecat"> 
+<h1 style="color:#010038">Users</h1>
+<table class="table table-striped">
 <div class="table-responsive">
 <thead>
   <tr>
     <th scope="col" >Id</th>
     <th scope="col" >Name name</th>
     <th scope="col">Image</th>
-    <th scope="col">Orders</th>
+    <th scope="col">Email</th>
     <th scope="col">User information</th>
     <th scope="col"></th>
     <th scope="col"></th>

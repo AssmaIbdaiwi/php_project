@@ -6,6 +6,6 @@ session_start();
 
 unset ($_SESSION["id"]);
 unset ($_SESSION['user_name']);
-header('location:homepage.php');
+header('location:../new/index.php');
 
 ?>

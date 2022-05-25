@@ -1,7 +1,9 @@
 <?php
-session_start();
-require("../admin_cp/init.php");
-include('../includes/templates/navbar.php');
+
+// require("../admin_cp/init.php");
+// include('../includes/templates/navbar.php');
+include_once('../new/header.php');
+
 $_SESSION['order_id'] = 59;
 ?>
 <!doctype html>
@@ -49,7 +51,6 @@ $_SESSION['order_id'] = 59;
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (JOD)</span>
                         <strong><?php if($_SESSION['discount_total']){
-
                         echo $_SESSION['discount_total'];}
                         else{
                             echo $_SESSION['total'];
@@ -97,7 +98,7 @@ $_SESSION['order_id'] = 59;
             </div>
 
             <hr class="mb-4">
-            <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#537EC5 ;color:white;">Continue to checkout</button>
+            <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#e15a53; ;color:white;">Continue to checkout</button>
             </form>
         </div>
     </div>

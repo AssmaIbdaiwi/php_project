@@ -1,7 +1,8 @@
 <?php
-require('../admin_cp/init.php');
-include_once('../includes/templates/navbar.php');
-session_start();
+// require('../admin_cp/init.php');
+// include_once('../includes/templates/navbar.php');
+include_once('../new/header.php');
+// session_start();
 
 ?>
 
@@ -70,6 +71,6 @@ session_start();
 </div>
 
 <?php
-include_once('../includes/templates/footer.php');
+include_once('../new/footer.php');
 
 ?>

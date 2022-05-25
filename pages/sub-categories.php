@@ -1,7 +1,8 @@
 <?php
-session_start();
-require_once '../admin_cp/init.php';
-include_once($tmp . 'navbar.php');
+// session_start();
+// require_once '../admin_cp/init.php';
+include_once('../homepage/header.php');
+// include_once($tmp . 'navbar.php');
 $pageTitle = 'categories';
 
 $select = "SELECT product_id,product_name, product_price, product_description, product_main_image, product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products`";
@@ -93,3 +94,7 @@ if (empty($products)) {
 <?php
 include_once '../includes/templates/footer.php';
 ?>
+
+
+
+

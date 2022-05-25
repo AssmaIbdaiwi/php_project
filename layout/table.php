@@ -21,6 +21,7 @@
   <!-- iconS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+ 
   
   <link rel="stylesheet" href="../catcssh.css">
   <link rel="stylesheet" href="../styleh.css"> 
@@ -37,6 +38,9 @@
       <li><a href="../admin_cp/categories.php"><i class="fa fa-pie-chart"></i><p>Categories</p></a></li>
       <li><a href="../admin_cp/products.php"><i class="fa fa-cart-arrow-down"></i></i><p>Products</p></a></li>
       <li><a href="../admin_cp/user.php"><i class="fa fa-user"></i><p>User</p></a></li>
+      <li><a href="../admin_cp/messeges.php"><i class="fa fa-comments"></i><p>Visitors messages</p></a></li>
+      <li><a href="../admin_cp/orders.php"><i class="fa fa-shopping-cart"></i><p>User Orders</p></a></li>
+      <!-- <li><a href="../admin_cp/admin_profile.php"><i class="fa fa-user"></i><p>Admin profile</p></a></li> -->
    <div class="active"></div>
     </ul>
   

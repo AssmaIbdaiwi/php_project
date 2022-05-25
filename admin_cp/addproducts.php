@@ -60,7 +60,7 @@ mkdir(dirname($imagePath));
     
     
  #for not add empty value;
-$statement=$db->prepare("INSERT INTO products (product_name, product_main_image, product_description, product_price,	product_category_id)
+$statement=$db->prepare("INSERT INTO products (product_name, product_main_image, product_description, product_price,product_category_id )
 VALUES (:name,:image,:description,:price,:dropdown)
 ");
 
@@ -102,6 +102,9 @@ $statement =$db->prepare('SELECT * FROM categories  ORDER BY category_id  ASC');
 
 $statement->execute();
 $products= $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 
 echo '<div class="addprodformcont"><div class="addprodformbox"><div class="addcatform"><form  method="post" enctype="multipart/form-data">';
 

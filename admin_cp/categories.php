@@ -40,7 +40,9 @@ echo '<div class="searchbox">
 
 
 #table
-echo'<div class="tablecatbox"><div class="tablecat"> <table class="table table-striped">
+echo'<div class="tablecatbox"><div class="tablecat">
+<h1 style="color:#010038">Categories</h1>
+ <table class="table table-striped">
 <div class="table-responsive">
 <thead>
   <tr>
@@ -58,11 +60,11 @@ foreach($products as $i){
             
             <td>'.$i['category_name'].'</td>
             <td><img class="catadd" src="'.$i['category_image'].'"></td>          
-            <td><a href="updatecategories.php?id='.$i['category_id'].'" type="button" class="btn btn-outline-primary">edit</a></td>
+            <td><a href="updatecategories.php?id='.$i['category_id'].'" type="button" class="btn btn-primary">edit</a></td>
             <td>
            <form method="post" action="deletecategories.php">
            <input type="hidden" name="id" value="'.$i['category_id'].'">
-            <button type="submit" class="btn btn-outline-danger">delete</button>
+            <button type="submit" class="btn btn-danger">delete</button>
             </form>
             </td>
           </tr>';}

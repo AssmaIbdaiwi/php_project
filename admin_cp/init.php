@@ -12,7 +12,7 @@ $func = '../includes/functions/'; // function directory
 
 include($func . 'functions.php');
 include($languages . 'en.php'); // website language
-include($tmp . 'header.php');
+// include($tmp . 'header.php');
 
 //Hide the nav bar if wanted
 // if (!isset($noNav)) {
