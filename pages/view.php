@@ -1,13 +1,23 @@
 
 <?php
-include_once('../homepage/header.php');
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_SESSION['id'])) {
+        header("Refresh:0");
+    }else{
+        header('location:http://localhost/project-test%20-%20Copy/third/new/loginpage.php');
+        exit;
+    }
+}
+
+include_once('../new/header.php');
 
 
-require_once '../admin_cp/init.php';
 
-
-$productId = $_GET['id'];
-
+$productId = $_GET['id'] ?? null;
+$user_img = $_SESSION['user_image'] ?? null;
+$user_id = $_SESSION['id'] ?? null;
 $select = "SELECT product_id,product_name, product_price, product_description, product_main_image, product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products`";
 
 $statement = $db->prepare($select . 'WHERE product_id = :id');
@@ -37,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $statement4 = $db->prepare('INSERT INTO `comments` (`comment`, `comment_product_id`, `comment_user_id`) VALUES (:comment, :product_id, :user_id)');
     $statement4->bindValue(':comment', $added_comment);
     $statement4->bindValue(':product_id', $productId);
-    $statement4->bindValue(':user_id', '35');
+    $statement4->bindValue(':user_id', '41');
     $statement4->execute();
-    header("Refresh:0");
+    
 }
 
 $catStatment = $db->prepare('SELECT c.category_id,c.category_name,s.sub_category_id,s.sub_category_name FROM categories c LEFT JOIN sub_categories s ON c.category_id = s.category_id ORDER BY c.category_name;');
@@ -59,14 +69,14 @@ $filt = uniqueCategory($categories);
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="../admin_cp/<?php echo $product['product_main_image'];?>" alt="..." /></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $product['product_name']?></h1>
-                        <div class="fs-5 mb-5">
+                        <div class="fs-5 mb-3">
 
 							<?php
 
 									echo '<span>' . 'JOD ' . round($product['product_price'],2) . '</span>';?>
 
                         </div>
-                        <p class="lead"><?php echo $product['product_description']?></p>
+                        <p class="lead mb-3" ><?php echo $product['product_description']?></p>
                         <div class="d-flex">
                             <form action="add.php?id=<?php echo $productId?>" class='d-inline' >
                             <input type="hidden" name="id" value='<?php echo $productId?>'>
@@ -92,7 +102,7 @@ $filt = uniqueCategory($categories);
                 <div class="p-3">
                     <h6>Top Comments</h6>
                 </div>
-                <div class="mt-3 d-flex flex-row align-items-center p-3 form-color"> <img src="https://i.imgur.com/zQZSWrt.jpg" width="50" class="rounded-circle mr-2"> 
+                <div class="mt-3 d-flex flex-row align-items-center p-3 form-color"> <img src="../admin_cp/<?php echo $user_img?>" width="50" class="rounded-circle mr-2"> 
                 <form action="" method='POST' class='add-comment'>
                 <input type="text" name='added' class="form-control form-comment " placeholder="Enter your comment...">
                 <input type="submit" value="Go" class='btn btn-primary go'>
@@ -101,7 +111,7 @@ $filt = uniqueCategory($categories);
                 <div class="mt-2">
                     <!-- looping over the comments -->
                     <?php foreach ($comments as $comment): ?>
-                    <div class="d-flex flex-row p-3"> <img src="<?php echo $comment['user_image']?>" width="40" height="40" class="rounded-circle mr-3">
+                    <div class="d-flex flex-row p-3"> <img src="../admin_cp/<?php echo $comment['user_image']?>" width="40" height="40" class="rounded-circle mr-3">
                         <div class="w-100 c-desc">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex flex-row align-items-center"> <span class="mx-2"><?php echo $comment['user_name'] ?></span> <small class="c-badge mx-2" >Top Comment</small> </div> <small><?php echo $comment['comment_date'] ?></small>
@@ -160,5 +170,4 @@ $filt = uniqueCategory($categories);
 		<!-- Related items section-->
  
 <?php
-include_once '../includes/templates/footer.php';
-?>
+include_once '../new/footer.php';?>

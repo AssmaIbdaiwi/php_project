@@ -150,7 +150,7 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         <p class="product-description "><?php echo substr($product['product_description'], 0, 30); ?></p>
                                         </h4>
 
-                                        <a href="view.php?id=<?php echo $product['product_id'];?>&name=<?php echo $product['product_name'];?>">  <button class="btn btn-outline-dark seemore">See more</button></a> 
+                                        <a href="../pages/view.php?id=<?php echo $product['product_id'];?>&name=<?php echo $product['product_name'];?>">  <button class="btn btn-outline-dark seemore">See more</button></a> 
                                       
 
                                         <!-- <button class="btn btn-outline-dark seemore">See more</button>    -->

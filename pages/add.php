@@ -49,7 +49,7 @@ $statement4->execute();
 $products_count = $statement4->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION['products_count'] = $products_count[0]['products_count'];
 
-//rediriction to the page the user just came from 
+//redirection to the page the user just came from 
 $redirect = str_replace('"','',$_SERVER['HTTP_REFERER']);
 if (isset($redirect)) {
     header("location:$redirect");

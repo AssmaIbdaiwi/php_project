@@ -72,7 +72,7 @@
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
     <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
+    <script src="../new/js/bootsnav.js."></script>
     <script src="js/images-loded.min.js"></script>
     <script src="js/isotope.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -80,6 +80,10 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="<?php echo $js . 'main.js'?>"></script>
+    <script src="https://kit.fontawesome.com/3509c2808e.js" crossorigin="anonymous"></script>
+    </body>
 
 </html>

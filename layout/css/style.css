@@ -26,9 +26,7 @@ a:hover {
     text-decoration: none;
     color: inherit;
 }
-.btn{
-  border-radius: 30px;
-}
+
 .section-products {
     padding: 80px 0 54px;
 }
@@ -463,7 +461,7 @@ ul.submenu{
   margin: 10px 20%;
 }
 .btn-outline-dark:hover{
-  background-color: var(--main-color3) !important;
+  background-color: #d16220 !important;
 }
 @media  screen and (max-width:770px) {
   .section-products{
@@ -505,7 +503,6 @@ ul.submenu{
 
 .form-comment {
     height: 48px;
-    border-radius: 25px;
     margin: 20px;
 }
 
@@ -567,47 +564,40 @@ ul.submenu{
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
 
-.searchTerm {
-  width: 320px;
-  height: 36px;
-  border: 1px solid var(--main-color1);
-  background: var(--main-color1);
-  text-align: center;
-  color: #fff;
-  border-radius:  5px 0 0 5px;
-  cursor: pointer;
-  font-size: 20px;
-}
+
 
 .searchTerm:focus{
-  color: var(--main-color3);
+  color: black;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid var(--main-color1);
-  background: var(--main-color3);
+  border: 0.5px solid #03030354;
+  background: #e35f21;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: 20px;
+  
 }
-
+.searchTerm{
+  margin: 0;
+  width: 262px;
+  margin: 10px -5px 10px -1px;
+  padding: 3.65px;
+  border: 0.5px solid #03030354;
+}
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 24%;
+  width: 100%;
   position: relative;
   top: 0;
   margin-bottom: 2%;
 }
+
+
 /* search bar */
 
 

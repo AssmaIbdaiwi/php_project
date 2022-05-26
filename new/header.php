@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+@session_start();
 require("../admin_cp/init.php");
 
 //fetching categories and sub categories
@@ -44,6 +44,11 @@ $filt = uniqueCategory($categories);
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../new/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=$css?>style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- theme stylesheet-->
+    
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -60,6 +65,7 @@ $filt = uniqueCategory($categories);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    
                     <div class="text-slid-box">
                         <a class="navbar-brand" href="#">
                             <img src="../layout/pic/logo.png" alt="logo" style="width:100px;">
@@ -70,8 +76,9 @@ $filt = uniqueCategory($categories);
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +962 77 777 7777</a></p>
                     </div>
-
+                    
                     <form class="d-flex">
+                        
                         <?php
                         if (!isset($_SESSION['id'])) {
                             echo '
@@ -87,9 +94,7 @@ $filt = uniqueCategory($categories);
 			   </div>
 			   <div class=col-md-2 pr-1 d-flex topper align-items-center text-lg-right >
 				   <a class=gold style='color: white' href= ../new/logout.php>Logout</a>
-			   </div>";
-                        } ?>
-                    </form>
+			   </div>";}?></form>
 
                 </div>
             </div>
@@ -110,7 +115,17 @@ $filt = uniqueCategory($categories);
                     <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> -->
                 </div>
                 <!-- End Header Navigation -->
-
+                <form action="../pages/sub-categories.php" method="GET" class='search-form'>
+				<div class="wrap">
+				<div class="search">
+					<input type="text" class="searchTerm" placeholder="What can we help you find ? " name='search'>
+					<button type="submit" class="searchButton">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+					</div>
+			</form>
+			
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
@@ -119,15 +134,16 @@ $filt = uniqueCategory($categories);
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                             <ul class="dropdown-menu megamenu-content" role="menu">
+                            <div class="row">
                                 <?php
                                 foreach ($filt as $category) {
                                     if ($category['sub_category_id']) { ?>
-                                        <div class="col-lg-3">
-                                            <h6 class="text-uppercase"><a href="http://localhost/php_project/pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
+                                        <div class="col-lg-3 my-4 ">
+                                            <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
                                             <ul class="megamenu-list list-unstyled">
                                                 <?php foreach ($subCategories as $subCategory) { ?>
                                                     <?php if ($category['category_id'] === $subCategory['category_id']) { ?>
-                                                        <li class="megamenu-list-item"><a class="megamenu-list-link" href="http://localhost/php_project/pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"> <?php echo $subCategory['sub_category_name'] ?> </a></li>
+                                                        <li class="megamenu-list-item"><a class="megamenu-list-link" href="../pages/sub-categories.php?sub_category=<?php echo $subCategory['sub_category_name']?>&subId=<?php echo $subCategory['sub_category_id']?>"> <?php echo $subCategory['sub_category_name'] ?> </a></li>
                                                 <?php
                                                     }
                                                 }
@@ -136,68 +152,17 @@ $filt = uniqueCategory($categories);
                                         </div>
                                     <?php
                                     } else { ?>
-                                        <div class="col-lg-3">
-                                            <h6 class="text-uppercase"><a href="http://localhost/php_project/pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
+                                        <div class="col-lg-3 my-4 ">
+                                            <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
                                         </div>
                                 <?php
                                     }
                                 }
                                 ?>
+                            </div>
 
 
 
-                                <li>
-                                    <div class="row">
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Top</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="shop.html">Jackets</a></li>
-                                                    <li><a href="shop.html">Shirts</a></li>
-                                                    <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                                    <li><a href="shop.html">T-shirts</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Bottom</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="shop.html">Swimwear</a></li>
-                                                    <li><a href="shop.html">Skirts</a></li>
-                                                    <li><a href="shop.html">Jeans</a></li>
-                                                    <li><a href="shop.html">Trousers</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end col-3 -->
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Clothing</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="shop.html">Top Wear</a></li>
-                                                    <li><a href="shop.html">Party wear</a></li>
-                                                    <li><a href="shop.html">Bottom Wear</a></li>
-                                                    <li><a href="shop.html">Indian Wear</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-menu col-md-3">
-                                            <h6 class="title">Accessories</h6>
-                                            <div class="content">
-                                                <ul class="menu-col">
-                                                    <li><a href="shop.html">Bags</a></li>
-                                                    <li><a href="shop.html">Sunglasses</a></li>
-                                                    <li><a href="shop.html">Fragrances</a></li>
-                                                    <li><a href="shop.html">Wallets</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end col-3 -->
-                                    </div>
-                                    <!-- end row -->
-                                </li>
                             </ul>
                         </li>
                         <!-- <li class="dropdown">

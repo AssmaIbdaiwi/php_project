@@ -1,7 +1,6 @@
 <?php
 // session_start();
-// require_once '../admin_cp/init.php';
-include_once('../homepage/header.php');
+include_once('../new/header.php');
 // include_once($tmp . 'navbar.php');
 $pageTitle = 'categories';
 
@@ -44,16 +43,7 @@ if (empty($products)) {
 		        <!-- ######################### categories and sub categories  -->
 			
 		<div class="container">
-		<form action="" method="GET" class='search-form'>
-				<div class="wrap">
-				<div class="search">
-					<input type="text" class="searchTerm" placeholder="Type to Search..." name='search' value=<?php echo $search?>>
-					<button type="submit" class="searchButton">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
-					</div>
-			</form>
+		
 				<div class="row justify-content-center text-center">
 				</div>
 				<div class="row">
@@ -64,7 +54,7 @@ if (empty($products)) {
                         <!-- Single Product -->
 						<div class="col-md-6 col-lg-4 col-xl-3">
 								<div id="product-4" class="single-product">
-										<div class="part-1" style="background: url('../admin_cp/<?php echo $product['product_main_image']; ?>') no-repeat center; background-size: cover; ">
+										<div class="part-1" style="background: url('../admin_cp/<?php echo $product['product_main_image']; ?>') no-repeat center; background-size: contain; ">
 
 									
 											<ul>
@@ -73,7 +63,7 @@ if (empty($products)) {
 											</ul>
 										</div>
 										<div class="part-2">
-												<h3 class="product-title"><?php echo $product['product_name']; ?></h3>
+												<h3 class="product-title"><?php echo substr($product['product_name'], 0, 30); ?></h3>
 
 										<?php	echo '<span>' . 'JOD ' . round($product['product_price'],2) . '</span>';?>
 
@@ -92,7 +82,7 @@ if (empty($products)) {
 
 
 <?php
-include_once '../includes/templates/footer.php';
+include_once '../new/footer.php';
 ?>
 
 
