@@ -5,7 +5,7 @@
 include_once('../new/header.php');
 
 
-$_SESSION['order_id'] = 53;
+// $_SESSION['order_id'] = 53;
 $sql = "SELECT * FROM `cart` WHERE order_id  = $_SESSION[order_id] order by order_id  ";
 
 $statment = $db->prepare($sql);

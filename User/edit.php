@@ -8,8 +8,8 @@ try {
 
 
     // if ($_SESSION['id']) {
-        // $i = $_SESSION['id'];
-        $i=35;
+        $i = $_SESSION['id'];
+        // $i=35;
         $user_name = $_POST['name'];
         $user_email = $_POST['email'];
         $user_phone = $_POST['phone'];

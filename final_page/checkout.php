@@ -4,7 +4,7 @@
 // include('../includes/templates/navbar.php');
 include_once('../new/header.php');
 
-$_SESSION['order_id'] = 59;
+// $_SESSION['order_id'] = 59;
 ?>
 <!doctype html>
 <html lang="en">

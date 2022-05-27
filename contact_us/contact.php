@@ -40,7 +40,7 @@ include_once('../new/header.php');
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group"  >
-                            <input type="submit" value="Send Message" name="submit-btn" class="btn rounded-3 py-2 px-4" style=" background-color: #e15a53">
+                            <input type="submit" value="Send Message" name="submit-btn" class="btn rounded-3 py-2 px-4" style=" background-color: #e15a53 ; color:white">
                         </div>
                     </div>
                 </form>

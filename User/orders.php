@@ -17,7 +17,8 @@ include_once('../new/header.php');
     <div class="row align-items-stretch no-gutters contact-wrap">
         <div class="col-md-3 sidebar_div">
             <img src="images/pic.jpg" class="rounded-circle" alt="Profile" width="100" height="100">
-            <h6 style="color: white;"><i class="fas fa-user-alt user_icons" style="color: #293A80;"></i><?php echo $_SESSION['user_name']?></h6>            <br><br>
+            <h3 style="color: white;"><?php echo $_SESSION['username']?></h3>            
+            <br><br>
             <a href="info.php" class="user_acc_links"><i class="fas fa-user-alt user_icons"></i> Info</a><br><br>
             <a href="orders.php" class="user_acc_links"><i class="fas fa-shopping-basket user_icons"></i> Orders</a><br><br>
             <a href="delete_session.php" class="user_acc_links"><i class="fa fa-sign-out user_icons"></i> Logout</a>
@@ -56,12 +57,12 @@ include_once('../new/header.php');
                     <td>" . '<form action="show_order.php" method="get" style="margin-left:-9%; ">
                     <input type="hidden" name="order-id" value="' . $value["order_id"] . '">
                     <input type="hidden" name="order_date" value="' . $value["order_date"] . '">
-                    <button type="submit" class="btn rounded-3 py-2 px-4" name="view" id="view"><i class="fa fa-eye"></i> View</button>
+                    <button type="submit" class="btn rounded-3 py-2 px-4" name="view" id="view" style=" background-color: #e15a53 ; color:white"><i class="fa fa-eye"></i> View</button>
                     </form>' . "</td></tr>";
                         }
                         echo "</tbody></table>";
                     } else {
-                        echo ('<h2>NO Orders</h2>');
+                        echo ('<h2>NO Orders !!!</h2>');
                     }
                 } catch (PDOException $e) {
                     echo $query1 . "<br>" . $e->getMessage();

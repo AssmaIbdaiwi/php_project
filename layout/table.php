@@ -41,7 +41,7 @@
       <li><a href="../admin_cp/messeges.php"><i class="fa fa-comments"></i><p>Visitors messages</p></a></li>
       <li><a href="../admin_cp/orders.php"><i class="fa fa-shopping-cart"></i><p>User Orders</p></a></li>
       <!-- <li><a href="../admin_cp/admin_profile.php"><i class="fa fa-user"></i><p>Admin profile</p></a></li> -->
-   <div class="active"></div>
+   <!-- <div class="active"></div> -->
     </ul>
   
   </div>

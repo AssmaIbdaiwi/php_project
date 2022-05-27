@@ -1,4 +1,3 @@
-
 <?php
 @session_start();
 require("../admin_cp/init.php");
@@ -44,11 +43,11 @@ $filt = uniqueCategory($categories);
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../new/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?=$css?>style.css">
+    <link rel="stylesheet" href="<?= $css ?>style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- theme stylesheet-->
-    
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -65,7 +64,7 @@ $filt = uniqueCategory($categories);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    
+
                     <div class="text-slid-box">
                         <a class="navbar-brand" href="#">
                             <img src="../layout/pic/logo.png" alt="logo" style="width:100px;">
@@ -76,25 +75,20 @@ $filt = uniqueCategory($categories);
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +962 77 777 7777</a></p>
                     </div>
-                    
+
                     <form class="d-flex">
-                        
+
                         <?php
                         if (!isset($_SESSION['id'])) {
-                            echo '
-                    <a href="../new/loginpage.php" class="btn btn-outline-light" type="button"
-                        style="margin-right: 10px;">Login</a>
-                    <a class="btn btn-outline-light" type="button" href="../new/reg.php">Register</a>';
+                            echo '<a href="../new/loginpage.php" class="btn btn-outline-light" type="button" style="margin-right: 10px;">Login</a>
+                            <a class="btn btn-outline-light" type="button" href="../new/reg.php">Register</a>';
                         } else {
-                           
                             echo "<div class=col-md-7 pr-1 d-flex topper align-items-center text-lg-right>
-						<h6 class=welcome style='color: white'> Welcome $_SESSION[username]</div>
-			   <div class=col-md-2 pr-1 d-flex topper align-items-center text-lg-right style='margin-right:5%'>
-				   <a class=gold style='color: white' href='../User/info.php' >Account</a>
-			   </div>
-			   <div class=col-md-2 pr-1 d-flex topper align-items-center text-lg-right >
-				   <a class=gold style='color: white' href= ../new/logout.php>Logout</a>
-			   </div>";}?></form>
+						<h3 class=welcome style='color: white'> Welcome <span style='color:#e15a53;'> $_SESSION[username]</span></h3>
+                        </div>
+				   <a class='btn btn-outline-light' type='button' href='../User/info.php' style='margin-right: 10px;'>Account</a>
+				   <a class='btn btn-outline-light' type='button' href= ../new/logout.php>Logout</a>";
+                        } ?></form>
 
                 </div>
             </div>
@@ -116,53 +110,50 @@ $filt = uniqueCategory($categories);
                 </div>
                 <!-- End Header Navigation -->
                 <form action="../pages/sub-categories.php" method="GET" class='search-form'>
-				<div class="wrap">
-				<div class="search">
-					<input type="text" class="searchTerm" placeholder="What can we help you find ? " name='search'>
-					<button type="submit" class="searchButton">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
-					</div>
-			</form>
-			
+                    <div class="wrap">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="What can we help you find ? " name='search'>
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="../new/index.php">Home</a></li>
-                       
+
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                             <ul class="dropdown-menu megamenu-content" role="menu">
-                            <div class="row">
-                                <?php
-                                foreach ($filt as $category) {
-                                    if ($category['sub_category_id']) { ?>
-                                        <div class="col-lg-3 my-4 ">
-                                            <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
-                                            <ul class="megamenu-list list-unstyled">
-                                                <?php foreach ($subCategories as $subCategory) { ?>
-                                                    <?php if ($category['category_id'] === $subCategory['category_id']) { ?>
-                                                        <li class="megamenu-list-item"><a class="megamenu-list-link" href="../pages/sub-categories.php?sub_category=<?php echo $subCategory['sub_category_name']?>&subId=<?php echo $subCategory['sub_category_id']?>"> <?php echo $subCategory['sub_category_name'] ?> </a></li>
-                                                <?php
-                                                    }
-                                                }
-                                                ?>
-                                            </ul>
-                                        </div>
+                                <div class="row">
                                     <?php
-                                    } else { ?>
-                                        <div class="col-lg-3 my-4 ">
-                                            <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
-                                        </div>
-                                <?php
+                                    foreach ($filt as $category) {
+                                        if ($category['sub_category_id']) { ?>
+                                            <div class="col-lg-3 my-4 ">
+                                                <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
+                                                <ul class="megamenu-list list-unstyled">
+                                                    <?php foreach ($subCategories as $subCategory) { ?>
+                                                        <?php if ($category['category_id'] === $subCategory['category_id']) { ?>
+                                                            <li class="megamenu-list-item"><a class="megamenu-list-link" href="../pages/sub-categories.php?sub_category=<?php echo $subCategory['sub_category_name'] ?>&subId=<?php echo $subCategory['sub_category_id'] ?>"> <?php echo $subCategory['sub_category_name'] ?> </a></li>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                </ul>
+                                            </div>
+                                        <?php
+                                        } else { ?>
+                                            <div class="col-lg-3 my-4 ">
+                                                <h6 class="text-uppercase font-weight-bold"><a href="../pages/sub-categories.php?category=<?php echo $category['category_name'] ?>&id=<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?></a></h6>
+                                            </div>
+                                    <?php
+                                        }
                                     }
-                                }
-                                ?>
-                            </div>
-
-
-
+                                    ?>
+                                </div>
                             </ul>
                         </li>
                         <!-- <li class="dropdown">
@@ -237,5 +228,3 @@ $filt = uniqueCategory($categories);
         </div>
     </div>
     <!-- End Top Search -->
-
-
