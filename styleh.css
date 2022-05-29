@@ -23,12 +23,12 @@
 
 }
 
-.headers{
+.headers1{
 width: 100%;
 height: 100%;
 background: white;
 }
-.side-nav{
+.side-nav {
     width: 250px;
     height: 300vh;
     background: #010038;
@@ -90,6 +90,7 @@ margin-right: 30px;
     color: #010038;
     transition: 0.3s;
     font-weight: bold;
+   
 }
 .nav-links li:hover ~ .active{
 display: block;
@@ -138,7 +139,7 @@ display: block;
 
  }
  nav-links li a {
-     justify-content: center;
+     justify-content: center; 
  }
 
 

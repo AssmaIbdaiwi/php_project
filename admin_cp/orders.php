@@ -53,4 +53,3 @@ echo'</div>'
 
 ?>
 
-<?php include '../includes/templates/footeradmin.php';?>

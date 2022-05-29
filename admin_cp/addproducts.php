@@ -153,6 +153,6 @@ if (empty(!$errors)){
 
 
 
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 

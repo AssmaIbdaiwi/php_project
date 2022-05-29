@@ -777,7 +777,7 @@
      transform: translate3d(10px,10px,0);
      -webkit-backface-visibility: hidden;
      backface-visibility: hidden;
-     height:200px;
+     height:250px;
 }
  .shop-cat-box:hover img{
      opacity: 0.6;

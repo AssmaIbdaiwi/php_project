@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $statement4 = $db->prepare('INSERT INTO `comments` (`comment`, `comment_product_id`, `comment_user_id`) VALUES (:comment, :product_id, :user_id)');
     $statement4->bindValue(':comment', $added_comment);
     $statement4->bindValue(':product_id', $productId);
-    $statement4->bindValue(':user_id', '41');
+    $statement4->bindValue(':user_id', $_SESSION['id']);
     $statement4->execute();
     
 }
@@ -111,7 +111,7 @@ $filt = uniqueCategory($categories);
                 <div class="mt-2">
                     <!-- looping over the comments -->
                     <?php foreach ($comments as $comment): ?>
-                    <div class="d-flex flex-row p-3"> <img src="../admin_cp/<?php echo $comment['user_image']?>" width="40" height="40" class="rounded-circle mr-3">
+                    <div class="d-flex flex-row p-3"> <img src="../User/images/pic.jpg" width="40" height="40" class="rounded-circle mr-3">
                         <div class="w-100 c-desc">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex flex-row align-items-center"> <span class="mx-2"><?php echo $comment['user_name'] ?></span> <small class="c-badge mx-2" >Top Comment</small> </div> <small><?php echo $comment['comment_date'] ?></small>

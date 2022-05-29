@@ -169,4 +169,4 @@ echo '<img src="'.$products['user_image'].'"class="update">';}
 
 
 
-<?php include 'C:\xampp\htdocs\php_project\includes\templates\footeradmin.php'?>
+

@@ -24,7 +24,7 @@ $cart = $statment->fetchAll();
 <ink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <style>
         #x {
             font-size: 36px;
@@ -120,7 +120,7 @@ $cart = $statment->fetchAll();
         </div>
         <div class="row">
             <div class="container">
-                <a href="product.php">
+                <a href="../pages/sub-categories.php">
                     <button class="btn btn-md float-right" id="shop" style=" background-color: #e15a53;;color: white;margin-left: 2%;"> Continue Shopping</button>
                 </a>
                 <form method="POST" action="checklogin.php">
@@ -130,7 +130,7 @@ $cart = $statment->fetchAll();
 
 
                 <!-- coupon-->
-
+                <p>coupon is : <span style="color:red">code50</span> </p>
                 <form class="form-inline my-2 my-lg-0" method="POST">
                     <input class="form-control mr-sm-2" type="text" name="copon" placeholder="coupon code">
                     <input class="form-control mr-sm-2" type="hidden" name="coponApply" value="<?php echo $value['product_id']; ?>">
@@ -140,7 +140,7 @@ $cart = $statment->fetchAll();
                 <?php
                     if (isset($_POST['apply'])) {
                         $coupon = $_POST['copon'];
-                        if ($coupon != 'code20') {
+                        if ($coupon != 'code50') {
                             echo "The coupon does not exist";
                         }
                     }
@@ -174,9 +174,9 @@ $cart = $statment->fetchAll();
                                         if (isset($_POST['apply'])) {
                                             $product_id = $_POST['coponApply'];
                                             $coupon = $_POST['copon'];
-                                            if ($coupon == 'code20') {
-                                                echo $total - ($total * 20 / 100) . " JD";
-                                                $_SESSION['discount_total'] = $total - ($total * 20 / 100);
+                                            if ($coupon == 'code50') {
+                                                echo $total - ($total * 50 / 100) . " JD";
+                                                $_SESSION['discount_total'] = $total - ($total * 50 / 100);
                                             } else {
                                                 echo "---";
                                             }

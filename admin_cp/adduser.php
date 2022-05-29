@@ -134,6 +134,6 @@ echo '<form  method="post" enctype="multipart/form-data">
 
 
 ?>
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 

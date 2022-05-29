@@ -74,11 +74,11 @@ foreach($products as $i){
 
             <td>'.$i['product_description'].'</td>
             <td>'.$i['product_price'].'JD</td>       
-            <td><a href="updateproduct.php?id='.$i['product_id'].'" type="button" class="btn btn-primary">edit</a></td>
+            <td><a href="updateproduct.php?id='.$i['product_id'].'" type="button" class="btn btn-primary">Edit</a></td>
             <td>
            <form method="post" action="deleteproduct.php">
            <input type="hidden" name="id" value="'.$i['product_id'].'">
-            <button type="submit" class="btn btn-danger">delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
             </form>
             </td>
           </tr>
@@ -93,6 +93,6 @@ foreach($products as $i){
 ?>
 
 
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 

@@ -60,4 +60,4 @@ require_once('init.php');
 </div>
 
 
-<?php include '../includes/templates/footeradmin.php';?>
+

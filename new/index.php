@@ -4,7 +4,7 @@ include_once('../new/header.php');?>
 
 <?php
 
-$select = "SELECT product_id,product_name, product_price, product_description, product_main_image,product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products`";
+$select = "SELECT product_id,product_name, product_price, product_description, product_main_image,product_desc_image_1, product_desc_image_2, product_desc_image_3, product_category_id, product_tag FROM `products` ORDER BY product_id desc limit 4";
 
 $statement = $db->prepare($select);
 $statement->execute();
@@ -12,7 +12,10 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-//fetching categories and sub categories
+
+?>
+
+<!-- //fetching categories and sub categories
 // $catStatment = $db->prepare('SELECT c.category_id,c.category_name,s.sub_category_id,s.sub_category_name FROM categories c LEFT JOIN sub_categories s ON c.category_id = s.category_id ORDER BY c.category_name;');
 // $catStatment->execute();
 // $categories = $catStatment->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +24,7 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
 // $subCategories = $subCatStatment->fetchAll(PDO::FETCH_ASSOC);
 // $filt = uniqueCategory($categories);
 
-// ?>
+//  -->
 
     <!-- Start Slider -->
     <div id="slides-shop" class="cover-slides">
@@ -92,7 +95,7 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="shop-cat-box">
                             <img class="img-fluid" src="../admin_cp/<?php echo $i['category_image']; ?>" alt="" />
-                            <a class="btn hvr-hover" href="#"><?php echo $i['category_name']; ?></a>
+                            <a class="btn hvr-hover" href="../pages/sub-categories.php"><?php echo $i['category_name']; ?></a>
                         </div>
                     </div>
 
@@ -104,6 +107,7 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <!-- End Categories -->
 
+    
     <!-- Start Products  -->
     <div class="products-box">
         <div class="container">
@@ -126,12 +130,15 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
             <div class="row justify-content-center text-center">
             </div>
             <div class="row">
+            
                 <?php if (empty($productnew)) {
                     echo '<h1>' . $no_products . '</h1>';
                 } else { ?>
-                    <?php foreach ($productnew as $i => $product) : ?>
+                    <?php
+                  
+                    foreach ($productnew as $i => $product) : ?>
                         <!-- Single Product -->
-
+                        
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div id="product-4" class="single-product">
                                 <div class="part-1">
@@ -164,7 +171,7 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                         <!-- Single Product -->
                     <?php endforeach; ?>
-
+                    
             </div>
         <?php } ?>
 
@@ -190,9 +197,11 @@ $productnew = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <div class="blog-box">
                         <div class="blog-img" >
                         
-                            <img class="img-fluid" src="pic/360_F_121222845_5tq9Tnumim0c6r1NcB3MybA8aKP02RIx.jpg" alt="" /> 
+                            <img class="img-fluid" src="pic/Black and Orange Restaurant  & Fast Food Facebook Cover.png" alt="" /> 
                             <div style="display:inline-block; font-size:40px; color:red;margin-left:100px" >  
-                            <a href="../new/reg.php">   <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#d92916; ;color:white;">COUPON</button>  </a>                
+
+
+                            <!-- <a href="#">   <button class="btn  btn-lg btn-block" type="submit" name="submit" value="submit" style="background-color:#d92916; ;color:white;">COUPON</button>  </a>                 -->
                             </div>
  
                         </div>

@@ -164,6 +164,5 @@ echo '<img src="'.$products['category_image'].'"class="update">';}
   
 
 
-  <?php include '../includes/templates/footeradmin.php';?>
 
 

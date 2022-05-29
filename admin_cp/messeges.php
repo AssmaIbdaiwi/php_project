@@ -98,6 +98,6 @@ window.location.href="./messeges.php"
 }
 ?>
 
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 

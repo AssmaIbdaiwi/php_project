@@ -29,9 +29,8 @@ include_once('../new/header.php');
                 $id = $_GET['order-id'];
                 $date = $_GET['order_date'];
 
-                $query1 = "SELECT * FROM cart WHERE order_date = :O_Date and order_id = :id";
+                $query1 = "SELECT * FROM cart WHERE order_id = :id";
                 $result = $db->prepare($query1);
-                $result->bindParam(':O_Date', $date);
                 $result->bindParam(':id', $id);
                 $result->execute();
                 $data = $result->fetchAll();

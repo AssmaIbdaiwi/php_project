@@ -25,21 +25,28 @@
   
   <link rel="stylesheet" href="../catcssh.css">
   <link rel="stylesheet" href="../styleh.css"> 
+
+<style>
+  
+  </style>
+
+
+
   </head>
   <body >
-    <div class="headers">
+    <div class="headers1">
   <div class="side-nav">
     <a href="#" class=logo><img src="../layout/pic/logo.png" alt="logo" class="logo-img">
       <img src="../layout/pic/mini_logo.png" alt="logo" class="logo-icon">
     
     </a>
     <ul class="nav-links">
-      <li ><a href="../admin_cp/dashboard.php"><i class="fa fa-home"></i><p>Dashboard</p></a></li>
-      <li><a href="../admin_cp/categories.php"><i class="fa fa-pie-chart"></i><p>Categories</p></a></li>
-      <li><a href="../admin_cp/products.php"><i class="fa fa-cart-arrow-down"></i></i><p>Products</p></a></li>
-      <li><a href="../admin_cp/user.php"><i class="fa fa-user"></i><p>User</p></a></li>
-      <li><a href="../admin_cp/messeges.php"><i class="fa fa-comments"></i><p>Visitors messages</p></a></li>
-      <li><a href="../admin_cp/orders.php"><i class="fa fa-shopping-cart"></i><p>User Orders</p></a></li>
+      <li  ><a href="../admin_cp/dashboard.php"  style="color:white"><i class="fa fa-home"></i><p>Dashboard</p></a></li>
+      <li><a href="../admin_cp/categories.php" style="color:white"><i class="fa fa-pie-chart"></i><p>Categories</p></a></li>
+      <li><a href="../admin_cp/products.php" style="color:white"><i class="fa fa-cart-arrow-down"></i></i><p>Products</p></a></li>
+      <li><a href="../admin_cp/user.php" style="color:white"><i class="fa fa-user"></i><p>User</p></a></li>
+      <li><a href="../admin_cp/messeges.php" style="color:white"><i class="fa fa-comments"></i><p>Visitors messages</p></a></li>
+      <li><a href="../admin_cp/orders.php" style="color:white"><i class="fa fa-shopping-cart"></i><p>User Orders</p></a></li>
       <!-- <li><a href="../admin_cp/admin_profile.php"><i class="fa fa-user"></i><p>Admin profile</p></a></li> -->
    <!-- <div class="active"></div> -->
     </ul>

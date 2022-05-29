@@ -5,14 +5,18 @@ $productId = $_GET['id'];
 $qty = $_GET['qty'];
 
 //get order id
-$statement2 = $db->prepare('SELECT order_id FROM orders WHERE order_user_id = "35" ORDER BY order_date DESC');
+$statement2 = $db->prepare('SELECT order_id FROM orders WHERE order_user_id =:id ORDER BY order_date DESC');
+$statement2->bindValue(':id',$_SESSION["id"]);
 $statement2->execute();
 $order = $statement2->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION['order_id'] = $order[0]['order_id'] ?? NULL;
 if (!$_SESSION['order_id']) {
-    $statement = $db->prepare('INSERT INTO `orders`( `order_location`, `order_mobile`, `order_user_name`, `order_total`,`order_user_id`) VALUES ("Jordan","077","abdallah","380","35")');
+    $statement = $db->prepare('INSERT INTO `orders`( `order_location`, `order_mobile`, `order_user_name`, `order_total`,`order_user_id`) VALUES ("Jordan","077",:name,"380",:id2)');
+    $statement->bindValue(':id2',$_SESSION["id"]);
+    $statement->bindValue(':name',$_SESSION["username"]);
     $statement->execute();
 }
+
 
 if ($_SESSION['order_id']) {
 $statement3 = $db->prepare('INSERT INTO `order_items` (`order_id`, `product_id`) VALUES (:order_id, :product_id)');
@@ -32,13 +36,14 @@ $product = $fetched[0];
 
 
 //add to cart
-$statement5 = $db->prepare('INSERT INTO `cart` ( `product_id`, `order_id`, `product_name`, `price`,  `image`, `sub_total`) VALUES (:product_id , :order_id, :product_name, :price , :image ,:sub_total)');
+$statement5 = $db->prepare('INSERT INTO `cart` ( `product_id`, `order_id`, `product_name`, `price`,  `image`, `sub_total`, `quantity`) VALUES (:product_id, :order_id, :product_name, :price, :image ,:sub_total, :quantity)');
 $statement5->bindvalue(':product_id' , $productId);
 $statement5->bindvalue(':order_id' , $_SESSION['order_id']);
 $statement5->bindvalue(':product_name' , $product['product_name']);
 $statement5->bindvalue(':price' , $product['product_price']);
 $statement5->bindvalue(':image' , $product['product_main_image']);
 $statement5->bindvalue(':sub_total' , $product['product_price']);
+$statement5->bindvalue(':quantity' , $qty);
 $statement5->execute();
 
 

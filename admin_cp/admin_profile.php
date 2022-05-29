@@ -155,4 +155,4 @@ function randomString($n)
 
 
 
-<?php include '../includes/templates/footeradmin.php';?>
+

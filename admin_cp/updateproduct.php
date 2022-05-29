@@ -119,7 +119,7 @@ function randomString($n){
 
 
 
-echo '<div class="updateprodformcont"><div class="updateprodformbox"><div class="updateform">';
+echo '<div class="updateprodformbox"><div class="updateform">';
 
 #cheack errors
 if (empty(!$errors)){
@@ -191,6 +191,6 @@ $products= $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-  <?php include '../includes/templates/footeradmin.php';?>
+  
 
 

@@ -65,11 +65,11 @@ foreach($products as $i){
            
             <td>'.$i['user_email'].'</td>
             <td>'.$i['user_mobile'].'</td>       
-            <td><a href="updateuser.php?id='.$i['user_id'].'" type="button" class="btn btn-primary">edit</a></td>
+            <td><a href="updateuser.php?id='.$i['user_id'].'" type="button" class="btn btn-primary">Edit</a></td>
             <td>
            <form method="post" action="deleteuser.php">
            <input type="hidden" name="id" value="'.$i['user_id'].'">
-            <button type="submit" class="btn btn-danger">delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
             </form>
             </td>
           </tr>
@@ -82,7 +82,5 @@ foreach($products as $i){
 
 ?>
 
-
-<?php include '../includes/templates/footeradmin.php';?>
 
 

@@ -9,7 +9,7 @@
             </div>
 </div>
 
-<?php include '../includes/templates/footeradmin.php';?>
+
 
 
 
